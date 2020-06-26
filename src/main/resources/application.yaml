@@ -1,0 +1,10 @@
+app:
+  elasticsearch:
+    url: ${ELASTICSEARCH_URL:}
+
+server:
+  port: ${SERVER_PORT:}
+
+logging:
+  level:
+    root: INFO

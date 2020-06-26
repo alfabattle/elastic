@@ -1,0 +1,19 @@
+version: '3.5'
+
+volumes:
+  postgres: ~
+
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.8.0
+    environment:
+      - discovery.type=single-node
+    ports:
+      - "${ELASTIC_PORT}:9200"
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.8.0
+    depends_on:
+      - elasticsearch
+    ports:
+      - "${KIBANA_PORT}:5601"
