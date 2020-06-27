@@ -1,6 +1,8 @@
 app:
   elasticsearch:
     url: ${ELASTICSEARCH_URL:}
+  loans-file: ${LOANS_FILE:}
+  persons-file: ${PERSONS_FILE:}
 
 server:
   port: ${SERVER_PORT:}
