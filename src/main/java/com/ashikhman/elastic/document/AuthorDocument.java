@@ -2,16 +2,16 @@ package com.ashikhman.elastic.document;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
+import org.springframework.data.elasticsearch.annotations.Document;
 
-/**
- * Article's author data object.
- */
+@Document(indexName = "authors")
 @Data
 @Accessors(chain = true)
 public class AuthorDocument {
 
-    /**
-     * Author's name.
-     */
-    private String name;
+    private String id;
+
+    private String fullName;
+
+    private String articleId;
 }
